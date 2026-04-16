@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — VistaRae</title>
+  <meta name="description" content="Privacy Policy for the VistaRae Chrome Extension. Learn how we handle your data." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0d0f14;
+      --bg-card: #13161e;
+      --border: #1f2333;
+      --accent: #7c6af7;
+      --accent2: #a78bfa;
+      --text: #e2e4ef;
+      --muted: #7b80a0;
+      --success: #34d399;
+      --radius: 14px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Hero ─────────────────────────────────── */
+    .hero {
+      background: linear-gradient(135deg, #0d0f14 0%, #131628 50%, #0d0f14 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 64px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(124, 106, 247, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(124, 106, 247, 0.12);
+      border: 1px solid rgba(124, 106, 247, 0.3);
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .badge::before {
+      content: '🔒';
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff 30%, var(--accent2) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 520px;
+      margin: 0 auto 8px;
+    }
+
+    .updated {
+      display: inline-block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    /* ── Layout ──────────────────────────────── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    /* ── Cards ───────────────────────────────── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      transition: border-color 0.2s;
+    }
+
+    .card:hover {
+      border-color: rgba(124, 106, 247, 0.35);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      background: rgba(124, 106, 247, 0.15);
+      border: 1px solid rgba(124, 106, 247, 0.25);
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .card h2 {
+      font-size: 17px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .card p,
+    .card li {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.8;
+    }
+
+    .card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 6px;
+    }
+
+    .card ul li {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .card ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-size: 12px;
+      top: 2px;
+    }
+
+    /* ── Highlight box ───────────────────────── */
+    .highlight {
+      background: rgba(52, 211, 153, 0.06);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .highlight-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .highlight p {
+      font-size: 14px;
+      color: #a7f3d0 !important;
+      line-height: 1.7;
+    }
+
+    /* ── Table ───────────────────────────────── */
+    .perm-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13.5px;
+      margin-top: 6px;
+    }
+
+    .perm-table thead tr {
+      background: rgba(124, 106, 247, 0.08);
+    }
+
+    .perm-table th {
+      padding: 10px 14px;
+      text-align: left;
+      color: var(--accent2);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .perm-table td {
+      padding: 12px 14px;
+      color: var(--muted);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      vertical-align: top;
+    }
+
+    .perm-table td:first-child {
+      color: #fff;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .perm-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* ── Platforms ───────────────────────────── */
+    .platform-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .platform-tag {
+      background: rgba(124, 106, 247, 0.1);
+      border: 1px solid rgba(124, 106, 247, 0.22);
+      color: var(--accent2);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    /* ── Contact ─────────────────────────────── */
+    .contact-link {
+      color: var(--accent2);
+      text-decoration: none;
+      border-bottom: 1px dashed rgba(167, 139, 250, 0.4);
+      transition: border-color 0.2s;
+    }
+
+    .contact-link:hover {
+      border-color: var(--accent2);
+    }
+
+    /* ── Footer ──────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer span {
+      color: var(--accent2);
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 20px;
+      }
+
+      .perm-table th,
+      .perm-table td {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Hero ── -->
+  <header class="hero">
+    <div
+      style="position: absolute; top: 24px; left: 24px; display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 700; color: #fff;">
+      <img src="icons/logo.png" alt="VistaRae Logo" style="width:32px; height:32px; object-fit: contain;">
+      <span>Vista<span style="color: #facc15;">Rae</span></span>
+    </div>
+    <div class="badge">Privacy Policy</div>
+    <h1>Vista<span style="-webkit-text-fill-color: #facc15; color: #facc15;">Rae</span> Privacy Policy</h1>
+    <p>We built VistaRae to be a tool you can trust completely. Your data stays on your device — always.</p>
+    <span class="updated">Last Updated: April 16, 2025</span>
+  </header>
+
+  <!-- ── Main Content ── -->
+  <main class="container">
+
+    <!-- Overview -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">👋</div>
+        <h2>Overview</h2>
+      </div>
+      <p>
+        VistaRae is a Chrome browser extension that lets you label, bookmark, annotate, and set reminders for important
+        parts of your AI conversations. This Privacy Policy explains how VistaRae handles your information. The short
+        version: <strong style="color:#fff">we collect nothing</strong>. Everything you create stays on your own device.
+      </p>
+    </div>
+
+    <!-- No Data Collection -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🚫</div>
+        <h2>No Data Collection</h2>
+      </div>
+      <div class="highlight">
+        <div class="highlight-icon">✅</div>
+        <p><strong>VistaRae does not collect, transmit, or store any of your personal data on any server.</strong> The
+          extension has no backend, no analytics, no tracking, and no connection to any external service.</p>
+      </div>
+      <br />
+      <p>Specifically, we do <strong style="color:#fff">not</strong> collect:</p>
+      <ul>
+        <li>Your name, email, or any account information</li>
+        <li>The content of your AI conversations</li>
+        <li>Your browsing history or activity patterns</li>
+        <li>Your labels, notes, or reminders</li>
+        <li>Usage statistics or telemetry data</li>
+        <li>Device information or IP addresses</li>
+      </ul>
+    </div>
+
+    <!-- Local Storage -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">💾</div>
+        <h2>Local Data Storage</h2>
+      </div>
+      <p>
+        VistaRae stores all data you create — labels, notes, moods, reminders, and settings — exclusively in <strong
+          style="color:#fff">Chrome's local browser storage</strong> (<code
+          style="font-size:12px; color: var(--accent2)">chrome.storage.local</code>) on your own device.
+      </p>
+      <br />
+      <p>This means:</p>
+      <ul>
+        <li>Your data never leaves your computer</li>
+        <li>No one — including the VistaRae developers — can access your data</li>
+        <li>Data is tied to your Chrome profile on your device</li>
+        <li>You can delete all stored data at any time by removing the extension or clearing its storage in Chrome
+          settings</li>
+      </ul>
+    </div>
+
+    <!-- Permissions -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🔑</div>
+        <h2>Permissions & Why We Need Them</h2>
+      </div>
+      <p style="margin-bottom: 16px;">VistaRae requests the following Chrome permissions. Each is used only for the
+        stated purpose:</p>
+      <table class="perm-table">
+        <thead>
+          <tr>
+            <th>Permission</th>
+            <th>Why It's Needed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>storage</td>
+            <td>Saves your labels, notes, and reminders locally on your device.</td>
+          </tr>
+          <tr>
+            <td>unlimitedStorage</td>
+            <td>Ensures heavy users with many labeled conversations don't hit storage limits. All data remains local.
+            </td>
+          </tr>
+          <tr>
+            <td>activeTab</td>
+            <td>Detects which AI platform tab you are currently viewing to activate the correct interface.</td>
+          </tr>
+          <tr>
+            <td>scripting</td>
+            <td>Injects the label highlight and note annotation UI into supported AI chat pages.</td>
+          </tr>
+          <tr>
+            <td>tabs</td>
+            <td>Identifies the active tab to enable platform-specific functionality on supported sites.</td>
+          </tr>
+          <tr>
+            <td>alarms</td>
+            <td>Schedules user-set reminders to trigger at the specified time, even when the AI tab isn't open.</td>
+          </tr>
+          <tr>
+            <td>notifications</td>
+            <td>Displays the system notification when a user-created reminder is triggered.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Supported Platforms -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🌐</div>
+        <h2>Supported Platforms</h2>
+      </div>
+      <p>VistaRae operates only on the following AI platforms, and only to inject its UI and read conversation structure
+        for labeling purposes. No conversation content is read, copied, or transmitted.</p>
+      <div class="platform-list">
+        <span class="platform-tag">ChatGPT (chatgpt.com)</span>
+        <span class="platform-tag">Google Gemini (gemini.google.com)</span>
+        <span class="platform-tag">Claude (claude.ai)</span>
+        <span class="platform-tag">Grok (grok.com)</span>
+        <span class="platform-tag">Perplexity (perplexity.ai)</span>
+      </div>
+    </div>
+
+    <!-- Third Parties -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">🤝</div>
+        <h2>Third-Party Services</h2>
+      </div>
+      <p>
+        VistaRae does <strong style="color:#fff">not</strong> integrate with, share data with, or send information to
+        any third-party services, APIs, analytics providers, or advertising networks. The extension functions entirely
+        offline and independently.
+      </p>
+    </div>
+
+    <!-- Children -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">👶</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>
+        VistaRae does not knowingly collect any information from anyone, including children under the age of 13. Since
+        no data is collected at all, there is no risk of collecting children's personal information.
+      </p>
+    </div>
+
+    <!-- Changes -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📝</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>
+        If we ever change how VistaRae handles data (for example, if we introduce optional cloud sync in a future
+        version), we will update this Privacy Policy with a new "Last Updated" date and notify users via the Chrome Web
+        Store listing. The updated policy will always be accessible at this URL.
+      </p>
+    </div>
+
+    <!-- Contact -->
+    <div class="card">
+      <div class="card-header">
+        <div class="card-icon">📬</div>
+        <h2>Contact</h2>
+      </div>
+      <p>
+        If you have any questions about this Privacy Policy or how VistaRae works, feel free to reach out at:
+        <br /><br />
+        <!-- Replace with your actual email -->
+        <a class="contact-link" href="mailto:thesachinsh@gmail.com">thesachinsh@gmail.com</a>
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2026 <span>Vista<span style="-webkit-text-fill-color: #facc15; color: #facc15;">Rae</span></span>. All rights
+      reserved. &nbsp;|&nbsp; Your data. Your device. Always.</p>
+  </footer>
+
+</body>
+
+</html>
